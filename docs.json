@@ -75,7 +75,7 @@
       "anchors": [
         {
           "anchor": "GitHub",
-          "href": "https://github.com/gimli",
+          "href": "https://github.com/boriskellerman/gimli",
           "icon": "github"
         }
       ]
@@ -89,7 +89,7 @@
     "links": [
       {
         "label": "GitHub",
-        "href": "https://github.com/gimli"
+        "href": "https://github.com/boriskellerman/gimli"
       }
     ]
   },
@@ -98,7 +98,7 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/gimli"
+      "github": "https://github.com/boriskellerman/gimli"
     }
   },
   "metadata": {

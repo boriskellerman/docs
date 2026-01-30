@@ -1,0 +1,29 @@
+---
+title: "Gateway Configuration"
+description: "Configure the gateway"
+---
+
+## Configuration File
+
+The gateway is configured in `~/.gimli/config.yaml`:
+
+```yaml
+gateway:
+  mode: local
+  port: 18789
+  bind: loopback
+  auto_start: true
+```
+
+## Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `GIMLI_GATEWAY_PORT` | Gateway port |
+| `GIMLI_GATEWAY_HOST` | Bind address |
+
+## CLI Options
+
+```bash
+gimli gateway run --port 8080 --bind 0.0.0.0
+```

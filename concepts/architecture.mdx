@@ -1,0 +1,69 @@
+---
+title: "Architecture"
+description: "Understanding Gimlé's system design"
+---
+
+## Overview
+
+Gimlé is built on a modular architecture that separates concerns between message routing, agent execution, and channel management.
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                      Gateway                             │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐    │
+│  │WhatsApp │  │Telegram │  │ Discord │  │  Slack  │    │
+│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘    │
+│       └────────────┴────────────┴────────────┘          │
+│                         │                                │
+│                    ┌────┴────┐                          │
+│                    │ Router  │                          │
+│                    └────┬────┘                          │
+│                         │                                │
+│                    ┌────┴────┐                          │
+│                    │ Agents  │                          │
+│                    └────┬────┘                          │
+│                         │                                │
+│                    ┌────┴────┐                          │
+│                    │ Memory  │                          │
+│                    └─────────┘                          │
+└─────────────────────────────────────────────────────────┘
+```
+
+## Core Components
+
+### Gateway
+
+The Gateway is the central hub that manages all messaging connections. It:
+- Maintains persistent connections to messaging platforms
+- Routes incoming messages to the appropriate agent
+- Handles authentication and session management
+
+### Router
+
+The Router determines how messages are processed:
+- Matches messages to agents based on rules
+- Handles allowlists and blocklists
+- Supports multi-channel routing
+
+### Agents
+
+Agents are the intelligence layer:
+- Execute AI models (Claude, GPT, etc.)
+- Use tools to perform actions
+- Maintain conversation context
+
+### Memory System
+
+The Memory system provides persistence:
+- Stores conversation history
+- Summarizes long conversations
+- Enables context across sessions
+
+## Data Flow
+
+1. **Message Received** - Channel receives message from user
+2. **Gateway Processing** - Gateway validates and routes message
+3. **Agent Execution** - Agent processes message with AI model
+4. **Tool Execution** - Agent may invoke tools
+5. **Response Sent** - Response routed back through gateway
+6. **Memory Updated** - Conversation stored in memory system

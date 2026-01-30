@@ -1,0 +1,63 @@
+---
+title: "Agents"
+description: "Building and managing intelligent agents"
+---
+
+## What is an Agent?
+
+An agent is an AI-powered assistant that can:
+- Respond to messages intelligently
+- Execute tools and actions
+- Maintain conversation context
+- Learn from interactions
+
+## Creating an Agent
+
+```bash
+gimli agent create my-assistant
+```
+
+## Agent Configuration
+
+Agents are configured in `~/.gimli/agents/`:
+
+```yaml
+name: my-assistant
+model: claude-sonnet-4-20250514
+system_prompt: |
+  You are a helpful assistant that...
+tools:
+  - web_search
+  - calculator
+```
+
+## Available Models
+
+| Model | Provider | Description |
+|-------|----------|-------------|
+| `claude-sonnet-4-20250514` | Anthropic | Best balance of speed and capability |
+| `claude-opus-4-20250514` | Anthropic | Most capable, slower |
+| `gpt-4o` | OpenAI | GPT-4 with vision |
+| `gpt-4o-mini` | OpenAI | Fast and efficient |
+
+## Tools
+
+Agents can use tools to perform actions:
+
+```yaml
+tools:
+  - name: web_search
+    description: Search the web for information
+  - name: send_email
+    description: Send an email
+    config:
+      smtp_server: smtp.example.com
+```
+
+## Multi-Agent Orchestration
+
+Run multiple agents that can communicate:
+
+```bash
+gimli agent run --multi my-assistant,researcher,writer
+```

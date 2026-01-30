@@ -1,0 +1,48 @@
+---
+title: "Gateway Security"
+description: "Secure your gateway"
+---
+
+## Authentication
+
+The gateway supports multiple authentication methods:
+
+### API Keys
+
+```yaml
+gateway:
+  auth:
+    type: api_key
+    keys:
+      - name: my-app
+        key: ${API_KEY}
+```
+
+### JWT Tokens
+
+```yaml
+gateway:
+  auth:
+    type: jwt
+    secret: ${JWT_SECRET}
+```
+
+## Rate Limiting
+
+```yaml
+gateway:
+  rate_limit:
+    enabled: true
+    requests_per_minute: 60
+```
+
+## Allowlists
+
+Control who can message your agents:
+
+```yaml
+routing:
+  allowlist:
+    - "+1234567890"
+    - "@username"
+```

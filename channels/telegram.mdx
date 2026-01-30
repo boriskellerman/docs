@@ -1,0 +1,52 @@
+---
+title: "Telegram"
+description: "Connect via Telegram Bot API"
+---
+
+## Overview
+
+Create a Telegram bot and connect it to Gimlé.
+
+## Setup
+
+### 1. Create a Bot
+
+1. Open Telegram and search for **@BotFather**
+2. Send `/newbot`
+3. Follow the prompts to create your bot
+4. Copy the **bot token**
+
+### 2. Add the Channel
+
+```bash
+gimli channels add telegram
+```
+
+Enter your bot token when prompted.
+
+### 3. Start the Bot
+
+```bash
+gimli gateway run
+```
+
+## Configuration
+
+```yaml
+channels:
+  telegram:
+    enabled: true
+    bot_token: ${TELEGRAM_BOT_TOKEN}
+```
+
+## Features
+
+| Feature | Supported |
+|---------|-----------|
+| Text Messages | ✅ |
+| Images | ✅ |
+| Voice Messages | ✅ |
+| Documents | ✅ |
+| Group Chats | ✅ |
+| Inline Queries | ✅ |
+| Commands | ✅ |

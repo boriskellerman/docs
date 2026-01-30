@@ -1,0 +1,64 @@
+---
+title: "Channels Overview"
+description: "Supported messaging platforms"
+---
+
+## Supported Channels
+
+Gimlé supports 15+ messaging platforms out of the box.
+
+<CardGroup cols={3}>
+  <Card title="WhatsApp" icon="whatsapp" href="/channels/whatsapp">
+    Personal & Business
+  </Card>
+  <Card title="Telegram" icon="telegram" href="/channels/telegram">
+    Bots & Users
+  </Card>
+  <Card title="Discord" icon="discord" href="/channels/discord">
+    Server Bots
+  </Card>
+  <Card title="Slack" icon="slack" href="/channels/slack">
+    Workspace Apps
+  </Card>
+  <Card title="Signal" icon="signal-messenger" href="/channels/signal">
+    Privacy-focused
+  </Card>
+  <Card title="iMessage" icon="message" href="/channels/imessage">
+    macOS
+  </Card>
+</CardGroup>
+
+## Quick Setup
+
+```bash
+# Add a channel
+gimli channels add whatsapp
+
+# Check status
+gimli channels status
+
+# Start gateway
+gimli gateway run
+```
+
+## Channel Comparison
+
+| Channel | Auth Type | Media | Group Support |
+|---------|-----------|-------|---------------|
+| WhatsApp | QR Code | ✅ | ✅ |
+| Telegram | Bot Token | ✅ | ✅ |
+| Discord | Bot Token | ✅ | ✅ |
+| Slack | OAuth | ✅ | ✅ |
+| Signal | Phone | ✅ | ✅ |
+| iMessage | macOS | ✅ | ✅ |
+
+## Enterprise Channels
+
+<CardGroup cols={2}>
+  <Card title="Microsoft Teams" icon="microsoft" href="/channels/teams">
+    Enterprise integration with Azure AD
+  </Card>
+  <Card title="Matrix" icon="grid" href="/channels/matrix">
+    Decentralized, self-hosted option
+  </Card>
+</CardGroup>

@@ -1,0 +1,41 @@
+---
+title: "Gateway Overview"
+description: "Central message routing hub"
+---
+
+## What is the Gateway?
+
+The Gateway is Gimlé's central hub that:
+- Manages all channel connections
+- Routes messages to agents
+- Handles authentication
+- Provides a unified API
+
+## Starting the Gateway
+
+```bash
+gimli gateway run
+```
+
+## Gateway Modes
+
+| Mode | Description |
+|------|-------------|
+| `local` | Run on your machine |
+| `remote` | Connect to a remote gateway |
+| `cloud` | Hosted gateway service |
+
+## Configuration
+
+```yaml
+gateway:
+  mode: local
+  port: 18789
+  bind: loopback
+```
+
+## Status
+
+```bash
+gimli gateway status
+```

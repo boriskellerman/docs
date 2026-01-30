@@ -1,0 +1,71 @@
+---
+title: "WhatsApp"
+description: "Connect to WhatsApp via WhatsApp Web"
+---
+
+## Overview
+
+Connect your personal or business WhatsApp account to Gimlé using the WhatsApp Web protocol.
+
+<Warning>
+  WhatsApp Web connections require an active phone with WhatsApp installed.
+</Warning>
+
+## Setup
+
+### 1. Add the Channel
+
+```bash
+gimli channels add whatsapp
+```
+
+### 2. Scan QR Code
+
+A QR code will be displayed. Scan it with your phone:
+1. Open WhatsApp on your phone
+2. Go to **Settings → Linked Devices**
+3. Tap **Link a Device**
+4. Scan the QR code
+
+### 3. Verify Connection
+
+```bash
+gimli channels status whatsapp
+```
+
+## Configuration
+
+```yaml
+channels:
+  whatsapp:
+    enabled: true
+    session_path: ~/.gimli/sessions/whatsapp
+    auto_reconnect: true
+```
+
+## Features
+
+| Feature | Supported |
+|---------|-----------|
+| Text Messages | ✅ |
+| Images | ✅ |
+| Voice Messages | ✅ |
+| Documents | ✅ |
+| Group Chats | ✅ |
+| Reactions | ✅ |
+| Reply Quotes | ✅ |
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="QR code not appearing">
+    Try restarting the gateway and clearing the session:
+    ```bash
+    gimli channels reset whatsapp
+    gimli gateway restart
+    ```
+  </Accordion>
+  <Accordion title="Disconnected frequently">
+    Ensure your phone has a stable internet connection and WhatsApp is running.
+  </Accordion>
+</AccordionGroup>

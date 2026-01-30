@@ -1,0 +1,23 @@
+---
+title: "Discord"
+description: "Create a Discord bot"
+---
+
+## Setup
+
+1. Create an application at [Discord Developer Portal](https://discord.com/developers/applications)
+2. Create a bot and copy the token
+3. Add the channel:
+
+```bash
+gimli channels add discord
+```
+
+## Configuration
+
+```yaml
+channels:
+  discord:
+    enabled: true
+    bot_token: ${DISCORD_BOT_TOKEN}
+```

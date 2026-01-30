@@ -1,0 +1,78 @@
+---
+title: "Memory System"
+description: "Persistent context across conversations"
+---
+
+## Overview
+
+Gimlé's memory system provides persistent context that survives across sessions and enables long-term learning.
+
+## Memory Types
+
+### Conversation Memory
+
+Short-term memory that stores recent messages:
+
+```yaml
+memory:
+  conversation:
+    max_messages: 100
+    max_tokens: 8000
+```
+
+### Long-term Memory
+
+Persistent storage for important information:
+
+```yaml
+memory:
+  long_term:
+    enabled: true
+    storage: sqlite
+```
+
+### Semantic Memory
+
+Vector-based search for relevant context:
+
+```yaml
+memory:
+  semantic:
+    enabled: true
+    provider: pinecone
+```
+
+## Memory Compaction
+
+When conversations get long, Gimlé automatically summarizes:
+
+1. **Recency Buffer** - Recent messages kept in full
+2. **Summarization** - Older messages compressed
+3. **Key Facts** - Important details preserved
+
+## Memory Injection
+
+Before each response, relevant memories are injected:
+
+```yaml
+memory:
+  injection:
+    enabled: true
+    max_memories: 5
+```
+
+## Querying Memory
+
+```bash
+gimli memory search "project deadline"
+```
+
+## Clearing Memory
+
+```bash
+# Clear conversation memory
+gimli memory clear --conversation
+
+# Clear all memory
+gimli memory clear --all
+```

@@ -1,97 +1,117 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Gimlé Documentation"
+description: "The complete guide to building intelligent messaging agents"
 ---
 
-## Setting up
+<img
+  className="block dark:hidden"
+  src="/logo/light.svg"
+  alt="Gimlé"
+  style={{ width: '200px', margin: '0 auto 24px' }}
+/>
+<img
+  className="hidden dark:block"
+  src="/logo/dark.svg"
+  alt="Gimlé"
+  style={{ width: '200px', margin: '0 auto 24px' }}
+/>
 
-Get your documentation site up and running in minutes.
+Gimlé is a powerful messaging agent framework that enables you to build automated assistants across multiple platforms. Whether you're connecting to enterprise messaging systems or personal chat apps, Gimlé provides the tools to orchestrate intelligent conversations.
+
+*Named after Gimlé, the golden hall of Norse mythology that survives Ragnarök.*
+
+## Getting Started
+
+<CardGroup cols={2}>
+  <Card
+    title="Quick Start"
+    icon="rocket"
+    href="/quickstart"
+  >
+    Get up and running in minutes with our installation guide.
+  </Card>
+  <Card
+    title="Installation"
+    icon="download"
+    href="/installation"
+  >
+    Detailed installation instructions for all platforms.
+  </Card>
+</CardGroup>
+
+## Core Features
+
+<CardGroup cols={2}>
+  <Card
+    title="Multi-Channel Support"
+    icon="messages"
+    href="/channels/overview"
+  >
+    Connect to 15+ messaging platforms including WhatsApp, Telegram, Discord, and Slack.
+  </Card>
+  <Card
+    title="Agent Orchestration"
+    icon="robot"
+    href="/concepts/agents"
+  >
+    Build and manage intelligent agents with custom tools and behaviors.
+  </Card>
+  <Card
+    title="Memory System"
+    icon="brain"
+    href="/concepts/memory"
+  >
+    Persistent context across conversations with automatic summarization.
+  </Card>
+  <Card
+    title="Gateway"
+    icon="tower-broadcast"
+    href="/gateway/overview"
+  >
+    Central hub for routing messages and managing connections.
+  </Card>
+</CardGroup>
+
+## Architecture
+
+Learn how Gimlé's components work together:
+
+<CardGroup cols={2}>
+  <Card
+    title="Architecture Overview"
+    icon="sitemap"
+    href="/concepts/architecture"
+  >
+    Understand the system design and how components interact.
+  </Card>
+  <Card
+    title="Channels"
+    icon="plug"
+    href="/concepts/channels"
+  >
+    How messaging platforms connect to Gimlé.
+  </Card>
+</CardGroup>
+
+## Supported Channels
+
+Connect your agents to these messaging platforms:
+
+| Channel | Status | Description |
+|---------|--------|-------------|
+| WhatsApp | ✅ | Personal and Business accounts via WhatsApp Web |
+| Telegram | ✅ | Bot API with full feature support |
+| Discord | ✅ | Bot integration with server management |
+| Slack | ✅ | Workspace apps with slash commands |
+| Signal | ✅ | Privacy-focused messaging |
+| iMessage | ✅ | macOS integration |
+| Matrix | ✅ | Decentralized messaging protocol |
+| Microsoft Teams | ✅ | Enterprise integration |
 
 <Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
+  title="View All Channels"
+  icon="grid"
+  href="/channels/overview"
 >
-  Follow our three step quickstart guide.
-</Card>
-
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
-
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
+  See the complete list of supported messaging platforms.
 </Card>

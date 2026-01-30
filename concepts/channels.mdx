@@ -1,0 +1,76 @@
+---
+title: "Channels"
+description: "How messaging platforms connect to Gimlé"
+---
+
+## What is a Channel?
+
+A channel is a connection to a messaging platform. Each channel:
+- Maintains a persistent connection
+- Handles platform-specific message formats
+- Manages authentication and sessions
+
+## Channel Types
+
+### Personal Channels
+
+Connect to your personal accounts:
+- WhatsApp (via WhatsApp Web)
+- Telegram (user account)
+- Signal
+- iMessage
+
+### Bot Channels
+
+Create bots on platforms:
+- Telegram Bot
+- Discord Bot
+- Slack App
+- Microsoft Teams
+
+## Adding a Channel
+
+```bash
+gimli channels add whatsapp
+```
+
+Follow the interactive prompts to authenticate.
+
+## Channel Status
+
+```bash
+gimli channels status
+```
+
+```
+Channel      Status    Messages
+---------    -------   --------
+whatsapp     ✅ Online  1,234
+telegram     ✅ Online    567
+discord      ⚠️ Reconnecting
+```
+
+## Channel Configuration
+
+Each channel has specific configuration options:
+
+```yaml
+channels:
+  whatsapp:
+    enabled: true
+    session_path: ~/.gimli/sessions/whatsapp
+  telegram:
+    enabled: true
+    bot_token: ${TELEGRAM_BOT_TOKEN}
+```
+
+## Multi-Channel Routing
+
+Route messages between channels:
+
+```yaml
+routing:
+  - from: whatsapp
+    to: telegram
+    condition: "message contains 'forward'"
+```
